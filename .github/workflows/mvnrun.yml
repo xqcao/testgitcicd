@@ -18,7 +18,7 @@ jobs:
           java-version: 11
       - uses: montudor/action-zip@v0.1.0
         with:
-          args: unzip -P ${{secrets.filepwd}} -qq ./libs/pdfkey-1.0.zip -d ./libs
+          args: unzip -P ${{secrets.FILEPWD}} -qq ./libs/pdfkey-1.0.zip -d ./libs
       - name: install jar
         run: mvn install:install-file -Dfile=./libs/pdfkey-1.0.jar
       - name: Build with Maven
