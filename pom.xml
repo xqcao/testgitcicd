@@ -56,7 +56,6 @@
         <plugin>
           <artifactId>maven-jar-plugin</artifactId>
           <version>3.0.2</version>
-          <!--
           <configuration>
         <archive>
           <manifest>
@@ -66,23 +65,7 @@
           </manifest>
         </archive>
       </configuration>
-          -->
-          <configuration>
-            <archive>
-               <index>true</index>
-               <manifestSections>
-                  <manifestSection>
-                     <name>${project.name}</name>
-                     <manifestEntries>
-                        <mode>development</mode>
-                        <groupId>${project.groupId}</groupId>
-                        <artifactId>${project.artifactId}</artifactId>
-                        <version>${project.version}-${buildNumber}<</version>
-                     </manifestEntries>
-                  </manifestSection>
-               </manifestSections>
-            </archive>
-         </configuration>
+
         </plugin>
         <plugin>
           <artifactId>maven-install-plugin</artifactId>
