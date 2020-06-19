@@ -6,7 +6,7 @@
 
   <groupId>com.hello</groupId>
   <artifactId>helloworld</artifactId>
-  <version>1.0-${buildNumber}-SNAPSHOT</version>
+  <version>1.0-SNAPSHOT</version>
 
   <name>helloworld</name>
   <!-- FIXME change it to the project's website -->
