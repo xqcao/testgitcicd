@@ -22,9 +22,12 @@ jobs:
       
       - name: install jar
         run: mvn install:install-file -Dfile=./libs/pdfkey-1.0.jar
+      - name: Generate build number
+        id: buildnumber
+        uses: einaregilsson/build-number@v2 
       - name: setting version
         run: |
-          export JARVERSION=3.0
+          export JARVERSION=${{ steps.buildnumber.outputs.build_number }}
           echo "::set-env name=JARVERSION::$JARVERSION"
       - name: change jar version when package
         run: sed "s/1.0-SNAPSHOT/$JARVERSION/g" pom.xml > pom_new.xml
