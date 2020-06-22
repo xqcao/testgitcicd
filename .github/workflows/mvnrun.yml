@@ -25,7 +25,7 @@ jobs:
       - name: install jar
         run: mvn install:install-file -Dfile=./libs/pdfkey-1.0.jar
       - name: change jar version when package
-        run: sed "s/1.0-SNAPSHOT/$JARVERSION/g" pom.xml > pom_new.xml
+        run: sed "s/1.0-SNAPSHOT/$($JARVERSION)/g" pom.xml > pom_new.xml
       - name: Build with Maven
         run: mvn clean package --file pom_new.xml
       - run: mkdir staging && cp target/*.jar staging
