@@ -24,7 +24,9 @@ jobs:
         run: mvn install:install-file -Dfile=./libs/pdfkey-1.0.jar
       - name: Generate build number
         id: buildnumber
-        uses: einaregilsson/build-number@v2 
+        uses: einaregilsson/build-number@v2
+        with:
+          token: ${{secrets.github_token}} 
       - name: setting version
         run: |
           export JARVERSION=${{ steps.buildnumber.outputs.build_number }}
