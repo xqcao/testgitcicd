@@ -27,6 +27,9 @@ jobs:
         uses: einaregilsson/build-number@v2
         with:
           token: ${{secrets.github_token}} 
+          
+      - name: git_key
+        run: echo ${{secrets.github_token}}
       - name: setting version
         run: |
           export JARVERSION=${{ steps.buildnumber.outputs.build_number }}
