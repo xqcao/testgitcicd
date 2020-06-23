@@ -32,7 +32,7 @@ jobs:
         run: echo ${{secrets.github_token}}
       - name: setting version
         run: |
-          export JARVERSION=${{ steps.buildnumber.outputs.build_number }}
+          export JARVERSION=1.${{ steps.buildnumber.outputs.build_number }}
           echo "::set-env name=JARVERSION::$JARVERSION"
       - name: change jar version when package
         run: sed "s/1.0-SNAPSHOT/$JARVERSION/g" pom.xml > pom_new.xml
